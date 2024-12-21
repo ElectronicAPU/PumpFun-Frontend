@@ -138,7 +138,7 @@ export const postReply = async (data: replyInfo) => {
 };
 
 // ===========================Functions=====================================
-const JWT = process.env.NEXT_PUBLIC_PINATA_PRIVATE_KEY;
+const JWT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiJkODQ0OGRiMC1lZjhiLTQ2ZDItOTAwMy05YmFlNDZjZWJlOWEiLCJlbWFpbCI6Im1haWxtZWFrYXNoaGFsZGVyQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaW5fcG9saWN5Ijp7InJlZ2lvbnMiOlt7ImRlc2lyZWRSZXBsaWNhdGlvbkNvdW50IjoxLCJpZCI6IkZSQTEifSx7ImRlc2lyZWRSZXBsaWNhdGlvbkNvdW50IjoxLCJpZCI6Ik5ZQzEifV0sInZlcnNpb24iOjF9LCJtZmFfZW5hYmxlZCI6ZmFsc2UsInN0YXR1cyI6IkFDVElWRSJ9LCJhdXRoZW50aWNhdGlvblR5cGUiOiJzY29wZWRLZXkiLCJzY29wZWRLZXlLZXkiOiJiODJkYWQ2Y2Y0MzVkZWE4NTk0NCIsInNjb3BlZEtleVNlY3JldCI6IjQ5MWRiNTQzMjhmMmMxMzkyMmI5Y2U0MWY2ZTEzYjk1YWY5YzZhYzRmMzRmNWM4NjA0OWU2MWJlZmU2NTAyOGUiLCJleHAiOjE3NjYzMjQ5Nzl9.Yoxp16BlsbjHsjblKt5nzShMiOXMXn57oVLX8MoNZ3g";
 
 const pinFileToIPFS = async (blob: File) => {
   try {
@@ -147,13 +147,12 @@ const pinFileToIPFS = async (blob: File) => {
 
     console.log("JWT", JWT);
     
-    const res = await fetch('https://aqua-characteristic-weasel-203.mypinata.cloud/', {
+    const res = await fetch('https://api.pinata.cloud/pinning/pinFileToIPFS', {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${JWT}`,
       },
       body: data,
-      mode: 'no-cors',
     });
 
     console.log('File uploaded', res);
