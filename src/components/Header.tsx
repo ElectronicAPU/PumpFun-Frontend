@@ -2,6 +2,7 @@ import { FC, useContext, useMemo } from "react";
 import { ConnectButton } from "./ConnectButton";
 import Link from "next/link";
 import UserContext from "@/context/UserContext";
+import AppKitButton from "./AppKitButton";
 
 interface HeaderProps {
   staked: number;
@@ -23,7 +24,8 @@ const Header: FC = () => {
             </svg>
           </Link>
         </div>
-        <ConnectButton></ConnectButton>
+        {/* <ConnectButton></ConnectButton> */}
+        <AppKitButton />
       </div>
     </header>
   );

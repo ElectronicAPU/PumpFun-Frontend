@@ -11,6 +11,8 @@
   "dependencies": {
     "@coral-xyz/anchor": "^0.30.0",
     "@gainsnetwork/sdk": "^0.2.1",
+    "@reown/appkit": "^1.6.2",
+    "@reown/appkit-adapter-wagmi": "^1.6.2",
     "@solana/spl-token": "^0.4.6",
     "@solana/wallet-adapter-base": "^0.9.23",
     "@solana/wallet-adapter-react": "^0.15.35",
@@ -32,7 +34,8 @@
     "react-toastify": "^10.0.5",
     "react-use": "^17.5.0",
     "tailwind-merge": "^2.3.0",
-    "viem": "^2.14.2"
+    "viem": "^2.21.56",
+    "wagmi": "^2.14.4"
   },
   "devDependencies": {
     "@types/node": "^20",
